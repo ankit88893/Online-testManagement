@@ -1,0 +1,47 @@
+<p>testlist works!</p>
+<h3>tests List</h3>
+<table border="5">
+
+    <tr>
+        <th>Id</th>
+        <th>testTitle</th>
+        <th>testDuration</th>
+        <th>totakMark</th>
+        <th>markScore</th>
+        <th>startTime</th>
+        <th>endTime</th>
+    </tr>
+    <tr *ngFor="let test of tests;let i=index">
+
+        <td>
+            {{test.id}}
+        </td>
+        <td>
+            {{test.testTitle}}
+        </td>
+
+        <td>
+            {{test.testDuration}}
+
+        </td>
+
+        <td>
+            {{test.totalMark}}
+        </td>
+        <td>
+            {{test.markScored}}
+        </td>
+        <td>
+            {{test.startTime}}
+        </td>
+
+        <td>
+            {{test.endTime}}
+        </td>
+        <td>
+            <button (click)="removeTest(test.id)">Remove Test</button>
+
+        </td>
+
+    </tr>
+</table>

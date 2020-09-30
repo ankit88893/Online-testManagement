@@ -1,0 +1,108 @@
+<h2>test module added!</h2>
+
+<form #testform=ngForm (ngSubmit)="testform.valid && addTest(testform)">
+
+    <div class="form-group">
+
+        <label>testTitle</label>
+        <input type="text" name="testTitle" required minlength="2" placeholder="enter test name" ngModel
+            #testtitleCtrl=ngModel class="form-control">
+
+    </div>
+    <div *ngIf="testtitleCtrl.errors!==null &&  testtitleCtrl.errors.required" class="error">
+        test title is requird
+    </div>
+    <div *ngIf="testtitleCtrl.errors!=null && testtitleCtrl.errors.minlength" class="error">
+        minlength is 2
+    </div>
+
+    <div class="form-group">
+
+        <label>testDuration</label>
+        <input type="text" name="testDuration" required minlength="2" placeholder="enter test duration" ngModel
+            #testdurationCtrl=ngModel class="form-control">
+
+    </div>
+    <div *ngIf="testdurationCtrl.errors!==null &&  testdurationCtrl.errors.required" class="error">
+        test duration is requird
+    </div>
+    <div *ngIf="testdurationCtrl.errors!=null && testdurationCtrl.errors.minlength" class="error">
+        minlength is 2
+    </div>
+
+
+    <div class="form-group">
+
+        <label>totalMark</label>
+        <input type="number" name="totalMark" placeholder="enter marks"ngModel #totalMarkCtrl=ngModel
+          class="form-control">
+
+    </div>
+    <div *ngIf="totalMarkCtrl.errors!==null &&  totalMarkCtrl.errors.required" class="error">
+        total Marks
+    </div> 
+
+    <div *ngIf="totalMarkCtrl.errors!=null && totalMarkCtrl.errors.minlength" class="error">
+        minlength is 2
+    </div> 
+
+
+    <div class="form-group">
+
+        <label> marks Scored</label>
+        <input type="number" name="markScored"  placeholder="Scored marks" ngModel ngModel #markScoredCtrl=ngModel
+            class="form-control">
+
+     </div>
+    <div *ngIf="markScoredCtrl.errors!==null &&  markScoredCtrl.errors.required" class="error">
+        scored Marks
+     </div>
+
+     <div *ngIf="markScoredCtrl.errors!=null && markScoredCtrl.errors.minlength" class="error">
+        minlength is 2
+    </div> 
+
+
+
+    <div class="form-group">
+
+        <label>startTime</label>
+        <input type="text" name="startTime" required minlength="2" placeholder="enter startTime" ngModel #starttimeCtrl=ngModel
+            class="form-control">
+
+    </div>
+    <div *ngIf="starttimeCtrl.errors!==null &&  starttimeCtrl.errors.required" class="error">
+        start time required
+    </div>
+    <div *ngIf="starttimeCtrl.errors!=null && starttimeCtrl.errors.minlength" class="error">
+        minlength is 2
+    </div>
+
+    <div class="form-group">
+
+        <label>endTime</label>
+        <input type="text" name="endTime" required minlength="2" placeholder="enter endTime" ngModel #endtimeCtrl=ngModel class="form-control">
+
+    </div>
+    <div *ngIf="endtimeCtrl.errors!==null &&  endtimeCtrl.errors.required" class="error">
+        start time required
+    </div>
+    <div *ngIf="endtimeCtrl.errors!=null && endtimeCtrl.errors.minlength" class="error">
+        minlength is 2
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+<br>
+<div *ngIf="test!==undefined">
+    <h3>Add test </h3>
+    
+   Id is {{test.id}}     <br><br>
+     Title is {{test.testTitle}} <br><br>
+     Duration is  {{test.testDuration}}   <br><br>
+    Total marks is  {{test.totalMark}}    <br><br>
+    MarkedScored is   {{test.markScored}}   <br><br>
+    Time when test get started  {{test.startTime}}   <br><br>
+      Time when test ends {{test.endTime}}       <br><br>
+
+</div>

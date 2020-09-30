@@ -1,0 +1,23 @@
+<p>testdetails works!</p>
+<h3>Test details</h3>
+<form #idform=ngForm (ngSubmit)=findTest(idform) >
+
+  <div class="form-group">
+  <label>Test Id</label>
+  <input type="number" name="testid"   ngModel class="form-control">
+</div>
+  <input type="submit" value="Search" class="btn btn-success">
+</form>
+<br>
+
+<div *ngIf="test!==undefined">
+  
+  
+ 
+    Test Title   {{test.testTitle}}  <br><br>
+   Test Duration  {{test.testDuration}}    <br><br>
+   Total mark {{test.totalMark}}       <br><br>
+   Mark scored {{test.markScored}}     <br><br>
+   Start time {{test.startTime}}      <br><br>
+    End time {{test.endTime}}  <br><br>
+</div>
