@@ -22,8 +22,8 @@ public class Test {
 
 	}
 
-	public Test(String testTitle, String testDuration, double testTotalMark, double testMarkScored, String startTime,
-			String endTime) {
+	public Test(String testTitle, String testDuration, double testTotalMark, double testMarkScored, 
+			String startTime,	String endTime) {
 		this.endTime = endTime;
 		this.startTime = startTime;
 		this.testDuration = testDuration;

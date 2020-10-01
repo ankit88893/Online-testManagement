@@ -10,9 +10,9 @@ public class CreateTestRequest {
 	private String testTitle;
 	
 	private String testDuration;
-	@Max(3600000)
+	//@Max(3600000)
 	private double testTotalMark;
-	@Min(0)
+	//@Min(0)
 	private double testMarkScored;
 	
 	private String startTime;

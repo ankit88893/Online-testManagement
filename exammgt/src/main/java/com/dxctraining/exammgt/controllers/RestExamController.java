@@ -46,8 +46,8 @@ public class RestExamController {
 
 	@PostMapping(value = "/addtest")
 	@ResponseStatus(HttpStatus.CREATED)
-	public TestDto create(@RequestBody @Valid CreateTestRequest data) {
-		//public TestDto create(@RequestBody  CreateTestRequest data) {
+	//public TestDto create(@RequestBody @Valid CreateTestRequest data) {
+		public TestDto create(@RequestBody  CreateTestRequest data) {
 		Log.info("test is added in the exam form");
 		String testTitle = data.getTestTitle();
 		String testDuration = data.getTestDuration();
