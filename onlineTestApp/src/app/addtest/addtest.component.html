@@ -1,10 +1,13 @@
-<h2>test module added!</h2>
+
+<h1>Add Test</h1>
+
+
 
 <form #testform=ngForm (ngSubmit)="testform.valid && addTest(testform)">
 
     <div class="form-group">
 
-        <label>testTitle</label>
+        <label>Test Title</label>
         <input type="text" name="testTitle" required minlength="2" placeholder="enter test name" ngModel
             #testtitleCtrl=ngModel class="form-control">
 
@@ -12,13 +15,16 @@
     <div *ngIf="testtitleCtrl.errors!==null &&  testtitleCtrl.errors.required" class="error">
         test title is requird
     </div>
+
     <div *ngIf="testtitleCtrl.errors!=null && testtitleCtrl.errors.minlength" class="error">
         minlength is 2
     </div>
 
+
+
     <div class="form-group">
 
-        <label>testDuration</label>
+        <label>Test Duration</label>
         <input type="text" name="testDuration" required minlength="2" placeholder="enter test duration" ngModel
             #testdurationCtrl=ngModel class="form-control">
 
@@ -31,45 +37,48 @@
     </div>
 
 
+
+
     <div class="form-group">
-<!-- <div> -->
-        <label>totalMark</label>
-        <input type="number" name="totalMark" placeholder="enter marks"ngModel #totalMarkCtrl=ngModel
-          class="form-control">
+
+        <label>Total Mark</label>
+        <input type="number" name="testTotalMark"  placeholder="enter marks"  ngModel
+         #testTotalMarkCtrl=ngModel class="form-control">
 
     </div>
-    <!-- <div *ngIf="totalMarkCtrl.errors!==null &&  totalMarkCtrl.errors.required" class="error">
+    <div *ngIf="testTotalMarkCtrl.errors!==null &&  testTotalMarkCtrl.errors.required" class="error">
         total Marks
     </div> 
 
-    <div *ngIf="totalMarkCtrl.errors!=null && totalMarkCtrl.errors.minlength" class="error">
-        minlength is 2
-    </div>  -->
+    <div *ngIf="testTotalMarkCtrl.errors!=null && testTotalMarkCtrl.errors.minlength" class="error">
+       
+    </div> 
+
+
 
 
     <div class="form-group">
-        <!-- <div> -->
 
-        <label> marks Scored</label>
-        <input type="number" name="markScored"  placeholder="Scored marks" ngModel ngModel #markScoredCtrl=ngModel
-            class="form-control">
 
-     </div>
-    <!-- <div *ngIf="markScoredCtrl.errors!==null &&  markScoredCtrl.errors.required" class="error">
+        <label> Marks Scored</label>
+        <input type="number" name="testMarkScored"  placeholder="Scored marks" ngModel
+            #testMarkScoredCtrl=ngModel class="form-control">
+
+    </div>
+    <div *ngIf="testMarkScoredCtrl.errors!==null &&  testMarkScoredCtrl.errors.required" class="error">
         scored Marks
-     </div>
+    </div>
 
-     <div *ngIf="markScoredCtrl.errors!=null && markScoredCtrl.errors.minlength" class="error">
-        minlength is 2
-    </div>  -->
-
+    <div *ngIf="testMarkScoredCtrl.errors!=null && testMarkScoredCtrl.errors.minlength" class="error">
+     
+    </div>
 
 
     <div class="form-group">
 
         <label>startTime</label>
-        <input type="text" name="startTime" required minlength="2" placeholder="enter startTime" ngModel #starttimeCtrl=ngModel
-            class="form-control">
+        <input type="text" name="startTime" required minlength="2" placeholder="enter startTime" ngModel
+            #starttimeCtrl=ngModel class="form-control">
 
     </div>
     <div *ngIf="starttimeCtrl.errors!==null &&  starttimeCtrl.errors.required" class="error">
@@ -79,10 +88,14 @@
         minlength is 2
     </div>
 
+
+
+
     <div class="form-group">
 
         <label>endTime</label>
-        <input type="text" name="endTime" required minlength="2" placeholder="enter endTime" ngModel #endtimeCtrl=ngModel class="form-control">
+        <input type="text" name="endTime" required minlength="2" placeholder="enter endTime" ngModel
+            #endtimeCtrl=ngModel class="form-control">
 
     </div>
     <div *ngIf="endtimeCtrl.errors!==null &&  endtimeCtrl.errors.required" class="error">
@@ -92,22 +105,33 @@
         minlength is 2
     </div>
 
-    <input type="submit" value="Submit" class="btn btn-primary">
+
+
+
+    <input type="submit" value="Submit" class="btn btn-success">
 </form>
 <br>
-<div *ngIf="test!==undefined"  class="alert alert-sucess">
-    <!-- <div class="alert alert-sucess"> -->
+<div *ngIf="test!==undefined" >
 
-      <br><br>
-    <strong> Input details Added sucessfully </strong>
+
+   
+
+
+     
+   
+
+
+
+
+    <br><br>
     <br><br>
 
-   Id is {{test.id}}     <br><br>
-     Title is {{test.testTitle}} <br><br>
-     Duration is  {{test.testDuration}}   <br><br>
-    Total marks is  {{test.totalMark}}    <br><br>
-    MarkedScored is   {{test.markScored}}   <br><br>
-    Time when test get started  {{test.startTime}}   <br><br>
-      Time when test ends {{test.endTime}}       <br><br>
+     Id is {{test.id}} <br><br>
+    Title is {{test.testTitle}} <br><br>
+    Duration is {{test.testDuration}} <br><br>
+    Total marks is {{test.testTotalMark}} <br><br>
+    Marks Scored is {{test.testMarkScored}} <br><br>
+    Time when test get started {{test.startTime}} <br><br>
+    Time when test ends {{test.endTime}} <br><br> 
 
 </div>
