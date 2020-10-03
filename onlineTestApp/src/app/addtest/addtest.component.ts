@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Test } from '../model/test';
 import { TestService } from '../service/testservice';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-addtest',
@@ -21,12 +22,12 @@ export class AddtestComponent  {
     let data = form.value;
     let testTitle = data.testTitle;
     let testDuration = data.testDuration;
-    let totalMarks = data.totalMark;
-    let marksScored = data.markScored;
+    let testTotalMark = data.testTotalMark;
+    let testMarkScored = data.testMarkScored;
     let startTime = data.startTime;
     let endTime = data.endTime;
 
-    this.test = new Test(1, testTitle, testDuration, totalMarks, marksScored, startTime, endTime);
+    this.test = new Test(1, testTitle, testDuration, testTotalMark, testMarkScored, startTime, endTime);
     let successFun = (testArg: Test) => {
       this.test = testArg;
     };
@@ -37,7 +38,8 @@ export class AddtestComponent  {
 
     let observable: Observable<Test> = this.testService.addTest(this.test);
     observable.subscribe(successFun, errFun);
-    // alert("test details added sucessfully ");
+    
+    
   }
 }
 
